@@ -1,0 +1,62 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Contains the inputs for the <a>CreateLunaClient</a> action.",
+            "properties": {
+                "Certificate": {
+                    "description": "The contents of a Base64-Encoded X.509 v3 certificate to be installed on the HSMs used by this client.",
+                    "maxLength": 2400,
+                    "minLength": 600,
+                    "pattern": "[\\w :+=./\\n-]*",
+                    "type": "string"
+                },
+                "Label": {
+                    "description": "The label for the client.",
+                    "pattern": "[a-zA-Z0-9_.-]{2,64}",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Certificate"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}
